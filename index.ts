@@ -52,7 +52,11 @@ export class Discord {
 			buttons: [
 				{
 					label: "Find Song",
-					url: encodeURI(`https://www.youtube.com/results?search_query=${title}`),
+					// EncodeURI doesn't encode the & symbol as %26 for some reason
+					url: encodeURI(`https://www.youtube.com/results?search_query=${
+						title
+							.replaceAll(" ", "+")
+					}`).replaceAll("&", "%26")
 				},
 			],
 		}));
