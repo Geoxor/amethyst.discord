@@ -45,7 +45,7 @@ export class Discord {
 		this.connected.then(check => check && !this.destroyed && this.updateRichPresence({
 			state: `${seek} - ${duration}`,
 			details: title,
-			largeImageKey: format || "blank",
+			largeImageKey: "audio_file",
 			largeImageText: format?.toUpperCase() || "Unknown Format",
 			smallImageKey: "logo",
 			smallImageText: `Amethyst v${APP_VERSION}\n`,
